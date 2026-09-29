@@ -313,6 +313,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p class="lead">Tell Neel a little about your trip. The form opens WhatsApp with your message ready to send.</p>
         <form id="enquiry" class="form" novalidate>
           <label for="f-name">Your name<input id="f-name" name="name" autocomplete="name" required></label>
+          <label for="f-loc">Location
+            <select id="f-loc" name="location">
+              <option value="">Choose a location</option>
+              <option>Kabini</option>
+              <option>Nagarahole</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
           <div class="row">
             <label for="f-when">When<input id="f-when" name="when" placeholder="e.g. mid-December, any weekend"></label>
             <label for="f-people">Guests<input id="f-people" name="people" type="number" min="1" max="4" inputmode="numeric" placeholder="2"></label>
@@ -349,6 +357,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     if(!v('f-name')){ err.hidden=false; document.getElementById('f-name').focus(); return; }
     err.hidden=true;
     var lines=['Hi Neel, I found Quite Wild and would like to know more.','','Name: '+v('f-name'),'Trip: 2D/1N safari'];
+    if(v('f-loc')) lines.push('Location: '+v('f-loc'));
     if(v('f-when')) lines.push('When: '+v('f-when'));
     if(v('f-people')) lines.push('Guests: '+v('f-people'));
     if(v('f-note')) lines.push('Note: '+v('f-note'));
