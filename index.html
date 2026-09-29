@@ -50,6 +50,8 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 18px; }
 .brand { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--cream); text-decoration: none; background: var(--ground); padding: 6px 12px; border-radius: 4px; }
 .brand span { color: var(--amber); }
+.brand .desc { display: block; font-family: var(--body); font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-top: 1px; }
+@media (max-width: 600px) { .brand .desc { display: none; } }
 .top a.ig { font-size: 14px; color: var(--cream); text-decoration: none; background: var(--ground); padding: 6px 12px; border-radius: 4px; }
 
 /* Hero: image carries its own fade to --ground */
@@ -128,7 +130,10 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .contact .lines { display: flex; flex-direction: column; gap: 20px; }
 .contact .phone { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4.5vw, 44px); font-variant-numeric: tabular-nums; color: var(--cream); text-decoration: none; }
 .contact .qrbox { justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.contact .qr { width: 180px; background: #fff; padding: 10px; border-radius: 6px; image-rendering: pixelated; }
+.contact .qrs { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.contact .qrs figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.contact .qrs figcaption { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); font-weight: 600; }
+.contact .qr { width: 150px; height: auto; background: #fff; padding: 10px; border-radius: 6px; image-rendering: pixelated; }
 .contact .qrbox span { font-size: 13px; color: var(--mute); text-align: center; max-width: 22ch; }
 
 .topr { display: flex; gap: 10px; align-items: center; }
@@ -176,7 +181,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#">Qui<span>te</span>Wild</a>
+    <a class="brand" href="#">Qui<span>te</span>Wild<small class="desc">Small-group &amp; private tours</small></a>
     <div class="topr">
       <a class="ig" href="https://www.instagram.com/quite_.wild/" target="_blank" rel="noopener">@quite_.wild</a>
       <a class="btn sm" href="#contact">Get in touch now</a>
@@ -188,7 +193,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="hero">
     <img src="assets/hero.jpg" alt="A tiger crouched at a waterhole, drinking, looking straight at the camera" width="1600" height="900">
     <div class="wrap copy">
-      <span class="eyebrow">Kabini · Nagarahole</span>
+      <span class="eyebrow">Small-group &amp; private tours · Kabini · Nagarahole</span>
       <h1>Experience<br>the <em>Wild</em></h1>
       <p class="tag">Quiet trips. <em>Quite wild.</em></p>
       <p class="lead">Small-group safaris in Karnataka's tiger country, hosted by Neel Basu. Homely meals, campfire nights, and time in the forest that respects the forest.</p>
@@ -321,6 +326,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p class="lead">Tell Neel a little about your trip. The form opens WhatsApp with your message ready to send.</p>
         <form id="enquiry" class="form" novalidate>
           <label for="f-name">Your name<input id="f-name" name="name" autocomplete="name" required></label>
+          <label for="f-type">Trip type
+            <select id="f-type" name="type">
+              <option value="">Choose a trip type</option>
+              <option>Small-group tour</option>
+              <option>Private tour</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
           <label for="f-loc">Location
             <select id="f-loc" name="location">
               <option value="">Choose a location</option>
@@ -349,8 +362,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </form>
       </div>
       <aside class="qrbox">
-        <img class="qr" src="assets/whatsapp-qr.png" alt="WhatsApp QR code for Neel Basu" width="420" height="420">
-        <span>Or message directly</span>
+        <div class="qrs">
+          <figure><img class="qr" src="assets/whatsapp-qr.png" alt="WhatsApp QR code for Neel Basu" width="420" height="420"><figcaption>WhatsApp</figcaption></figure>
+          <figure><a href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener"><img class="qr" src="assets/instagram-qr.png" alt="Instagram QR code for @neelbasu" width="500" height="500"></a><figcaption>Instagram</figcaption></figure>
+        </div>
+        <span>Scan to connect, or message directly</span>
         <a class="phone" href="https://wa.me/919900934633" target="_blank" rel="noopener">+91 99009 34633</a>
         <span>Instagram <a href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener">@neelbasu</a></span>
       </aside>
@@ -374,7 +390,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     var err=document.getElementById('f-err');
     if(!v('f-name')){ err.hidden=false; document.getElementById('f-name').focus(); return; }
     err.hidden=true;
-    var lines=['Hi Neel, I found Quite Wild and would like to know more.','','Name: '+v('f-name'),'Trip: 2D/1N safari'];
+    var lines=['Hi Neel, I found Quite Wild and would like to know more.','','Name: '+v('f-name'),'Trip: '+(v('f-type') ? v('f-type')+' (2D/1N)' : '2D/1N')];
     if(v('f-loc')) lines.push('Location: '+v('f-loc'));
     if(v('f-when')) lines.push('When: '+v('f-when'));
     if(v('f-people')) lines.push('Guests: '+v('f-people'));
