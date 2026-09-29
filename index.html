@@ -95,7 +95,10 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .about .text { display: flex; flex-direction: column; gap: 18px; max-width: 62ch; }
 .about .sig a.handle { font-family: var(--body); font-weight: 500; font-size: 16px; margin-left: 10px; }
 .about .sig { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--amber); }
-.stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 8px; }
+.statrow { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: stretch; margin-top: 8px; }
+.stats { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+.statpics { display: grid; gap: 10px; min-width: 0; max-width: 250px; justify-self: end; width: 100%; }
+.about .statpics img { aspect-ratio: 4 / 3; height: auto; object-position: 55% 60%; }
 .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--cream); font-variant-numeric: tabular-nums; }
 .stat span { font-size: 14px; color: var(--mute); }
 
@@ -253,7 +256,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="about">
     <div class="wrap grid">
       <div class="pics">
-        <img src="assets/tiger-bath.jpg" alt="A tiger resting in a waterhole" width="1599" height="1200">
         <figure class="host">
           <img src="assets/neel-basu.jpg" alt="Neel Basu in a safari jeep in the forest" width="1120" height="840">
           <figcaption>Neel, on safari</figcaption>
@@ -266,10 +268,16 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p>Three years ago, I started taking small groups along. Seeing someone spot their first tiger, or hearing the forest go quiet just before an alarm call, turned out to be the best part.</p>
         <p>Now I do this full time, which means a few more slots each season. I take the photos, so you can simply be there.</p>
         <span class="sig">Neel Basu <a class="handle" href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener">@neelbasu</a></span>
-        <div class="stats">
-          <div class="stat"><b>10+</b><span>years in these forests</span></div>
-          <div class="stat"><b>3</b><span>years hosting groups</span></div>
-          <div class="stat"><b>4</b><span>guests, at most</span></div>
+        <div class="statrow">
+          <div class="stats">
+            <div class="stat"><b>10+</b><span>years in these forests</span></div>
+            <div class="stat"><b>3</b><span>years hosting groups</span></div>
+            <div class="stat"><b>4</b><span>guests, at most</span></div>
+          </div>
+          <div class="statpics">
+            <img src="assets/tiger-bath.jpg" alt="A tiger resting in a waterhole" width="1599" height="1200">
+            <img src="assets/tiger-grass.jpg" alt="A tiger resting in tall grass" width="1152" height="864">
+          </div>
         </div>
       </div>
     </div>
@@ -323,7 +331,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </label>
           <div class="row">
             <label for="f-when">When<input id="f-when" name="when" placeholder="e.g. mid-December, any weekend"></label>
-            <label for="f-people">Guests<input id="f-people" name="people" type="number" min="1" max="4" inputmode="numeric" placeholder="2"></label>
+            <label for="f-people">Guests
+              <select id="f-people" name="people">
+                <option value="">Who’s coming?</option>
+                <option>Flying solo</option>
+                <option>Couple</option>
+                <option>Group of 2</option>
+                <option>Group of 3</option>
+                <option>Group of 4</option>
+                <option>Group of 5 or more</option>
+              </select>
+            </label>
           </div>
           <label for="f-note">Anything else<textarea id="f-note" name="note" rows="3" placeholder="Occasion, interests, questions"></textarea></label>
           <p class="err" id="f-err" hidden>Add your name so Neel knows who's writing.</p>
