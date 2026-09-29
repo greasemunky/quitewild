@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c1410">
+<title>Quite Wild</title>
+<meta name="description" content="Small-group safaris in Kabini and Nagarahole, hosted by Neel Basu. Max 4 guests, homely meals, campfire nights, safaris with conservation in mind.">
+<meta property="og:title" content="Quite Wild · Quiet trips. Quite wild.">
+<meta property="og:description" content="Small-group safaris in Kabini and Nagarahole, hosted by Neel Basu. Max 4 guests.">
+<meta property="og:image" content="assets/tiger-waterhole.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: single column, photo-led. Hero photo with the headline sitting on its baked fade; sections alternate text and imagery; one contact block at the end. Deliberately single-theme (forest night). */
+:root {
+  --ground: #0c1410;
+  --forest: #14231b;
+  --leaf: #1e3528;
+  --line: #2a3f33;
+  --amber: #e9a23b;
+  --cream: #f2ecdd;
+  --mute: #a9baae;
+  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body { margin: 0; background: var(--ground); color: var(--cream); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--amber); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.02em; line-height: .95; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(34px, 6vw, 60px); }
+h2 em, h1 em { font-style: normal; color: var(--amber); }
+.eyebrow { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); font-weight: 600; }
+p { margin: 0; }
+.lead { font-size: clamp(17px, 2vw, 20px); color: var(--cream); max-width: 60ch; }
+.muted { color: var(--mute); }
+section { padding-block: clamp(64px, 10vw, 120px); }
+.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--amber); color: var(--ground); font-weight: 600; font-size: 16px; padding: 14px 22px; border-radius: 999px; text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--cream); border: 1px solid var(--line); }
+
+/* Top bar */
+.top { position: absolute; top: 0; left: 0; right: 0; z-index: 2; padding-top: env(safe-area-inset-top, 0px); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 18px; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--cream); text-decoration: none; background: var(--ground); padding: 6px 12px; border-radius: 4px; }
+.brand span { color: var(--amber); }
+.top a.ig { font-size: 14px; color: var(--cream); text-decoration: none; background: var(--ground); padding: 6px 12px; border-radius: 4px; }
+
+/* Hero: image carries its own fade to --ground */
+.hero { position: relative; padding: 0; }
+.hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 30%; min-height: 360px; }
+.hero .copy { margin-top: clamp(-220px, -16vw, -60px); position: relative; display: flex; flex-direction: column; gap: 20px; padding-bottom: 24px; }
+.hero h1 { font-size: clamp(56px, 12vw, 132px); line-height: .88; }
+.hero .tag { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3.4vw, 34px); line-height: 1.1; margin-top: -6px; }
+.hero .tag em { font-style: normal; color: var(--amber); }
+.hero .facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; border: 1px solid var(--line); background: var(--forest); padding: 6px 12px; border-radius: 999px; }
+.chip b { color: var(--amber); font-weight: 600; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* Experience pillars */
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+.pillar { background: var(--ground); padding: 28px 24px 32px; display: flex; flex-direction: column; gap: 10px; }
+.pillar svg { width: 34px; height: 34px; stroke: var(--amber); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.pillar h3 { font-size: 24px; line-height: 1.05; }
+.pillar p { color: var(--mute); font-size: 16px; }
+
+/* The trip */
+.trip { background: var(--forest); }
+.trip .grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.trip .grid > * { min-width: 0; }
+.trip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 4px; }
+.trip .card { display: flex; flex-direction: column; gap: 22px; }
+.trip .pkg { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3vw, 30px); }
+.trip ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.trip li { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.trip li span:last-child { color: var(--mute); text-align: right; }
+.trip .price { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.trip .price b { font-family: var(--display); font-size: 26px; color: var(--amber); }
+
+/* About */
+.about .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.about .grid > * { min-width: 0; }
+.about img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; }
+.about .text { display: flex; flex-direction: column; gap: 18px; max-width: 62ch; }
+.about .sig a.handle { font-family: var(--body); font-weight: 500; font-size: 16px; margin-left: 10px; }
+.about .sig { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--amber); }
+.stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 8px; }
+.stat b { display: block; font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--cream); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14px; color: var(--mute); }
+
+/* Safari code */
+.code ol { list-style: none; counter-reset: c; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 28px 40px; }
+.code li { counter-increment: c; display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; }
+.code li::before { content: counter(c, decimal-leading-zero); grid-row: span 2; font-family: var(--display); font-weight: 800; color: var(--amber); font-size: 18px; line-height: 1.4; }
+.code li b { font-weight: 600; }
+.code li span { color: var(--mute); font-size: 16px; }
+
+/* Gallery */
+.gallery { padding-top: 0; }
+.shots { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(120px, 16vw, 200px); gap: 8px; margin-top: 36px; }
+.shots img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+.s1 { grid-column: span 4; grid-row: span 2; }
+.s2 { grid-column: span 2; grid-row: span 2; object-position: 50% 30%; }
+.s3 { grid-column: span 2; }
+.s4 { grid-column: span 2; }
+.s5 { grid-column: span 2; }
+.shots figcaption { display: none; }
+
+/* Contact */
+.contact { background: var(--forest); }
+.contact .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.contact .grid > * { min-width: 0; }
+.contact .lines { display: flex; flex-direction: column; gap: 20px; }
+.contact .phone { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4.5vw, 44px); font-variant-numeric: tabular-nums; color: var(--cream); text-decoration: none; }
+.contact .qrbox { justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.contact .qr { width: 180px; background: #fff; padding: 10px; border-radius: 6px; image-rendering: pixelated; }
+.contact .qrbox span { font-size: 13px; color: var(--mute); text-align: center; max-width: 22ch; }
+
+.topr { display: flex; gap: 10px; align-items: center; }
+.btn.sm { padding: 8px 14px; font-size: 14px; }
+.ways .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; margin-top: 40px; }
+.way { border: 1px solid var(--line); border-radius: 6px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; background: var(--ground); min-width: 0; }
+.way.feature { background: var(--forest); border-color: var(--amber); }
+.way .tag { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); font-weight: 600; }
+.way h3 { font-size: 28px; }
+.way p { color: var(--mute); font-size: 16px; }
+.way ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 15px; flex: 1; }
+.way li { padding-left: 16px; position: relative; }
+.way li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.way .btn { align-self: flex-start; }
+.form { display: flex; flex-direction: column; gap: 14px; margin-top: 6px; }
+.form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--mute); min-width: 0; }
+.form input, .form select, .form textarea { font: inherit; font-size: 16px; color: var(--cream); background: var(--ground); border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; width: 100%; }
+.form input:focus, .form select:focus, .form textarea:focus { outline: 2px solid var(--amber); outline-offset: 1px; border-color: var(--amber); }
+.form ::placeholder { color: #6f8277; }
+.form .btn { align-self: flex-start; border: 0; cursor: pointer; }
+.form .err { color: var(--amber); font-size: 14px; }
+.contact .qrbox a.phone { font-size: 24px; }
+@media (max-width: 760px) { .form .row { grid-template-columns: 1fr; } .top a.ig { display: none; } }
+footer { padding-block: 32px calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 14px; color: var(--mute); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 760px) {
+  .trip .grid, .about .grid, .contact .grid { grid-template-columns: 1fr; }
+  .trip img { aspect-ratio: 4 / 3; }
+  .contact .qrbox { justify-self: start; align-items: flex-start; }
+  .shots { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+  .s1 { grid-column: span 2; grid-row: span 2; }
+  .s2 { grid-column: span 1; grid-row: span 2; }
+  .s3, .s4, .s5 { grid-column: span 1; }
+  .s5 { grid-column: span 2; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Qui<span>te</span>Wild</a>
+    <div class="topr">
+      <a class="ig" href="https://www.instagram.com/quite_.wild/" target="_blank" rel="noopener">@quite_.wild</a>
+      <a class="btn sm" href="#contact">Get in touch now</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="assets/hero.jpg" alt="A tiger crouched at a waterhole, drinking, looking straight at the camera" width="1600" height="900">
+    <div class="wrap copy">
+      <span class="eyebrow">Kabini · Nagarahole</span>
+      <h1>Experience<br>the <em>Wild</em></h1>
+      <p class="tag">Quiet trips. <em>Quite wild.</em></p>
+      <p class="lead">Small-group safaris in Karnataka's tiger country, hosted by Neel Basu. Homely meals, campfire nights, and time in the forest that respects the forest.</p>
+      <div class="facts">
+        <span class="chip">2 Days · 1 Night</span>
+        <span class="chip">2 Safaris</span>
+        <span class="chip"><b>Max 4 guests</b></span>
+      </div>
+      <div class="ctas">
+        <a class="btn" href="#contact">Get in touch now</a>
+        <a class="btn ghost" href="#trip">See the trip</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="wrap">
+      <span class="eyebrow">The experience</span>
+      <h2 style="margin-top:14px">An authentic jungle weekend, <em>not a checklist</em></h2>
+      <div class="pillars">
+        <div class="pillar">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l7 11h-4l6 9H7l6-9H9z"/><path d="M16 23v6"/></svg>
+          <h3>Authentic jungle</h3>
+          <p>Forest-edge stays, dawn and dusk in the park, and the sounds of the jungle at night.</p>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15h22a11 11 0 0 1-22 0z"/><path d="M11 10c0-2 2-2 2-4M16 10c0-2 2-2 2-4M21 10c0-2 2-2 2-4"/></svg>
+          <h3>Homely meals</h3>
+          <p>Simple, home-style food. Three meals, shared at one table.</p>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c3 5 7 7 7 13a7 7 0 0 1-14 0c0-4 2-5 3-8 1 3 3 3 4 4 0-3-1-6 0-9z"/><path d="M6 28l20-4M6 24l20 4"/></svg>
+          <h3>Campfire nights</h3>
+          <p>Evenings end around the fire, trading the day's sightings and stories.</p>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 22h22l-3-8H8z"/><circle cx="10" cy="24" r="3"/><circle cx="22" cy="24" r="3"/><path d="M11 14l2-5h6l2 5"/></svg>
+          <h3>Conservation-minded safaris</h3>
+          <p>Jeeps run quietly and at a distance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trip" id="trip">
+    <div class="wrap grid">
+      <img src="assets/leopard-portrait.jpg" alt="A leopard resting in a tree, looking at the camera" width="1121" height="1600">
+      <div class="card">
+        <span class="eyebrow">The trip</span>
+        <h2>2 Days · 1 Night</h2>
+        <ul>
+          <li><span>Safaris</span><span>2 jeep safaris</span></li>
+          <li><span>Stay</span><span>1 night in the jungle</span></li>
+          <li><span>Meals</span><span>3 homely meals</span></li>
+          <li><span>Evening</span><span>Campfire</span></li>
+          <li><span>Photos</span><span>Shared with you after the trip</span></li>
+          <li><span>Group</span><span>Maximum 4 guests</span></li>
+        </ul>
+        <p class="muted" style="font-size:15px">Not included: travel to and from the forest (can be arranged), and the government camera fee if you bring your own camera.</p>
+        <div class="price"><b>Contact for details</b><a class="btn" href="#contact">Get dates</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap grid">
+      <img src="assets/tiger-bath.jpg" alt="A tiger resting in a waterhole" width="1599" height="1200">
+      <div class="text">
+        <span class="eyebrow">Your host</span>
+        <h2>Meet <em>Neel</em></h2>
+        <p>For over a decade, the jungle has been my constant. Through a full-time job and life in the city, I kept finding my way back to Kabini and Nagarahole. I went on self-drive safaris and core-zone safaris, stayed in the forest, and spent more mornings than I can count behind a camera.</p>
+        <p>Three years ago, I started taking small groups along. Seeing someone spot their first tiger, or hearing the forest go quiet just before an alarm call, turned out to be the best part.</p>
+        <p>Now I do this full time, which means a few more slots each season. I take the photos, so you can simply be there.</p>
+        <span class="sig">Neel Basu <a class="handle" href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener">@neelbasu</a></span>
+        <div class="stats">
+          <div class="stat"><b>10+</b><span>years in these forests</span></div>
+          <div class="stat"><b>3</b><span>years hosting groups</span></div>
+          <div class="stat"><b>4</b><span>guests, at most</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="code">
+    <div class="wrap">
+      <span class="eyebrow">How we safari</span>
+      <h2 style="margin-top:14px">The forest <em>comes first</em></h2>
+      <ol>
+        <li><b>We keep our distance.</b><span>No crowding a sighting, no pushing for a closer look.</span></li>
+        <li><b>We stay quiet.</b><span>Voices low in the jeep. You hear more, and so do they.</span></li>
+        <li><b>We never chase.</b><span>If an animal moves away, we let it go.</span></li>
+        <li><b>We leave nothing behind.</b><span>No plastic, no litter, no feeding, ever.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <span class="eyebrow">From past trips</span>
+      <h2 style="margin-top:14px">What the forest <em>shows you</em></h2>
+      <div class="shots">
+        <img class="s1" src="assets/tiger-waterhole.jpg" alt="Tiger drinking at a waterhole">
+        <img class="s2" src="assets/leopard-portrait.jpg" alt="Leopard portrait in a tree">
+        <img class="s3" src="assets/tiger-grass.jpg" alt="Tiger resting in tall grass">
+        <img class="s4" src="assets/paradise-flycatcher.jpg" alt="Indian paradise flycatcher on a branch">
+        <img class="s5" src="assets/leopard-branch.jpg" alt="Leopard lying along a branch">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap grid">
+      <div class="lines">
+        <span class="eyebrow">Get in touch now</span>
+        <h2>Groups are small. <em>Slots go quickly.</em></h2>
+        <p class="lead">Tell Neel a little about your trip. The form opens WhatsApp with your message ready to send.</p>
+        <form id="enquiry" class="form" novalidate>
+          <label for="f-name">Your name<input id="f-name" name="name" autocomplete="name" required></label>
+          <div class="row">
+            <label for="f-when">When<input id="f-when" name="when" placeholder="e.g. mid-December, any weekend"></label>
+            <label for="f-people">Guests<input id="f-people" name="people" type="number" min="1" max="4" inputmode="numeric" placeholder="2"></label>
+          </div>
+          <label for="f-note">Anything else<textarea id="f-note" name="note" rows="3" placeholder="Occasion, interests, questions"></textarea></label>
+          <p class="err" id="f-err" hidden>Add your name so Neel knows who's writing.</p>
+          <button class="btn" type="submit">Send on WhatsApp</button>
+        </form>
+      </div>
+      <aside class="qrbox">
+        <img class="qr" src="assets/whatsapp-qr.png" alt="WhatsApp QR code for Neel Basu" width="420" height="420">
+        <span>Or message directly</span>
+        <a class="phone" href="https://wa.me/919900934633" target="_blank" rel="noopener">+91 99009 34633</a>
+        <span>Instagram <a href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener">@neelbasu</a></span>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Quite Wild · Kabini &amp; Nagarahole, Karnataka</span>
+    <span>Instagram <a href="https://www.instagram.com/quite_.wild/" target="_blank" rel="noopener">@quite_.wild</a> · <a href="https://www.instagram.com/neelbasu/" target="_blank" rel="noopener">@neelbasu</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('enquiry');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){ return document.getElementById(id).value.trim(); };
+    var err=document.getElementById('f-err');
+    if(!v('f-name')){ err.hidden=false; document.getElementById('f-name').focus(); return; }
+    err.hidden=true;
+    var lines=['Hi Neel, I found Quite Wild and would like to know more.','','Name: '+v('f-name'),'Trip: 2D/1N safari'];
+    if(v('f-when')) lines.push('When: '+v('f-when'));
+    if(v('f-people')) lines.push('Guests: '+v('f-people'));
+    if(v('f-note')) lines.push('Note: '+v('f-note'));
+    window.open('https://wa.me/919900934633?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
