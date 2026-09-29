@@ -106,12 +106,13 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .gallery { padding-top: 0; }
 .shots { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(120px, 16vw, 200px); gap: 8px; margin-top: 36px; }
 .shots img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
-.s1 { grid-column: span 4; grid-row: span 2; }
-.s2 { grid-column: span 2; grid-row: span 2; object-position: 50% 30%; }
-.s3 { grid-column: span 2; }
-.s4 { grid-column: span 2; }
-.s5 { grid-column: span 2; }
-.shots figcaption { display: none; }
+.shots { grid-auto-flow: dense; }
+.g-a { grid-column: span 4; grid-row: span 2; }
+.g-b { grid-column: span 2; grid-row: span 2; object-position: 50% 30%; }
+.g-c { grid-column: span 4; grid-row: span 2; object-position: 45% 62%; }
+.g-d { grid-column: span 2; grid-row: span 2; object-position: 28% 50%; }
+.g-e, .g-f, .g-g { grid-column: span 2; }
+.g-h { grid-column: span 6; grid-row: span 2; object-position: 50% 62%; }
 
 /* Contact */
 .contact { background: var(--forest); }
@@ -153,10 +154,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .trip img { aspect-ratio: 4 / 3; }
   .contact .qrbox { justify-self: start; align-items: flex-start; }
   .shots { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
-  .s1 { grid-column: span 2; grid-row: span 2; }
-  .s2 { grid-column: span 1; grid-row: span 2; }
-  .s3, .s4, .s5 { grid-column: span 1; }
-  .s5 { grid-column: span 2; }
+  .g-a, .g-c, .g-h { grid-column: span 2; grid-row: span 2; }
+  .g-b, .g-d { grid-column: span 1; grid-row: span 2; }
+  .g-e, .g-f { grid-column: span 1; }
+  .g-g { grid-column: span 2; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .btn { transition: transform .15s ease; }
@@ -282,11 +283,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <span class="eyebrow">From past trips</span>
       <h2 style="margin-top:14px">What the forest <em>shows you</em></h2>
       <div class="shots">
-        <img class="s1" src="assets/tiger-waterhole.jpg" alt="Tiger drinking at a waterhole">
-        <img class="s2" src="assets/leopard-portrait.jpg" alt="Leopard portrait in a tree">
-        <img class="s3" src="assets/tiger-grass.jpg" alt="Tiger resting in tall grass">
-        <img class="s4" src="assets/paradise-flycatcher.jpg" alt="Indian paradise flycatcher on a branch">
-        <img class="s5" src="assets/leopard-branch.jpg" alt="Leopard lying along a branch">
+        <img class="g-a" src="assets/tiger-waterhole.jpg" alt="Tiger drinking at a waterhole">
+        <img class="g-b" src="assets/leopard-portrait.jpg" alt="Leopard portrait in a tree">
+        <img class="g-c" src="assets/black-panther.jpg" alt="Black panther standing in a forest clearing, looking back">
+        <img class="g-d" src="assets/tiger-lookback.jpg" alt="Tiger looking back over its shoulder among fallen branches">
+        <img class="g-e" src="assets/tiger-grass.jpg" alt="Tiger resting in tall grass">
+        <img class="g-f" src="assets/paradise-flycatcher.jpg" alt="Indian paradise flycatcher on a branch">
+        <img class="g-g" src="assets/leopard-branch.jpg" alt="Leopard lying along a branch">
+        <img class="g-h" src="assets/elephants-kabini.jpg" alt="Elephant herd with a calf on the Kabini backwaters">
       </div>
     </div>
   </section>
