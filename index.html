@@ -61,6 +61,8 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .hero h1 { font-size: clamp(56px, 12vw, 132px); line-height: .88; }
 .hero .tag { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3.4vw, 34px); line-height: 1.1; margin-top: -6px; }
 .hero .tag em { font-style: normal; color: var(--amber); }
+.hero .eyebrow { font-size: clamp(12px, 3.4vw, 18px); }
+@media (max-width: 760px) { .hero .eyebrow .hsep { display: block; height: 0; overflow: hidden; } }
 .hero .facts { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font-size: 14px; border: 1px solid var(--line); background: var(--forest); padding: 6px 12px; border-radius: 999px; }
 .chip b { color: var(--amber); font-weight: 600; }
@@ -193,7 +195,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="hero">
     <img src="assets/hero.jpg" alt="A tiger crouched at a waterhole, drinking, looking straight at the camera" width="1600" height="900">
     <div class="wrap copy">
-      <span class="eyebrow">Small-group &amp; private tours · Kabini · Nagarahole</span>
+      <span class="eyebrow">Small-group &amp; private tours<span class="hsep"> · </span>Kabini · Nagarahole</span>
       <h1>Experience<br>the <em>Wild</em></h1>
       <p class="tag">Quiet trips. <em>Quite wild.</em></p>
       <p class="lead">Small-group safaris in Karnataka's tiger country, hosted by Neel Basu. Homely meals, campfire nights, and time in the forest that respects the forest.</p>
